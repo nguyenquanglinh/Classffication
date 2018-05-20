@@ -9,4 +9,4 @@ def render_static(page_name):
 
 
 if __name__ == '__main__':
-    app.run(port=500)
+    app.run(port=8000)
