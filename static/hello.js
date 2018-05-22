@@ -4,14 +4,17 @@ me.avatar = "https://lh6.googleusercontent.com/-lr2nyjhhjXw/AAAAAAAAAAI/AAAAAAAA
 var you = {};
 you.avatar = "https://a11.t26.net/taringa/avatares/9/1/2/F/7/8/Demon_King1/48x48_5C5.jpg";
 
+
+$( document ).ready(function() {
+
+
 function formatAMPM(date) {
     var hours = date.getHours();
     var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? '0'+minutes : minutes;
-    var strTime = hours + ':' + minutes + ' ' + ampm;
+    var day = date.getDate();
+    var month = date.getMonth();
+    var year = date.getFullYear();
+    var strTime ="time: "+ hours + ':' + minutes +'h '+ 'Date: '+day+':'+month+':'+year
     return strTime;
 }
 
@@ -54,7 +57,8 @@ function resetChat(){
     $("ul").empty();
 }
 
-$(".mytext").on("keydown", function(e){
+$(".mytext").keydown( function(e){
+
     if (e.which == 13){
         var text = $(this).val();
         if (text !== ""){
@@ -64,6 +68,7 @@ $(".mytext").on("keydown", function(e){
     }
 });
 
+
 $('body > div > div > div:nth-child(2) > span').click(function(){
     $(".mytext").trigger({type: 'keydown', which: 13, keyCode: 13});
 })
@@ -72,6 +77,8 @@ $('body > div > div > div:nth-child(2) > span').click(function(){
 resetChat();
 
 //-- Print Messages
+});
+
 
 
 
