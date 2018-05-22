@@ -1,12 +1,12 @@
 from flask import Flask, render_template
 
-app = Flask(__name__)
+app = Flask(__name__,static_folder='static')
 
 
-@app.route('/<string:page_name>/')
-def render_static(page_name):
-    return render_template("%s.html" % page_name)
+@app.route('/')
+def render_static( ):
+    return render_template("hello.html" )
 
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(port=7000)
